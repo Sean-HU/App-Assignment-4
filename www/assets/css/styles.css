@@ -4,8 +4,16 @@ table {
 }
 
 th, td {
-    text-align:center;
+    text-align: center;
     padding: 10px;
+}
+
+tr:nth-child(odd) {
+    background-color: #8ec5ea;
+}
+
+tr:nth-last-child(even) {
+    background-color: aqua;
 }
 
 .content {

@@ -38,9 +38,10 @@
                     $('.content').html(employeeListTpl(employees));
                 });
             }
-            else {
+            else 
                 $('.content').html(null);
-            }
         }
+        else
+            $('.content').html(null);
     }
 }());
