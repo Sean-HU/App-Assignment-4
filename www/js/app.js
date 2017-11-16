@@ -6,20 +6,19 @@
         $('.search-last').on('keyup', findByName);
     }
 
+    /* ---------------------------------- Local Variables ---------------------------------- */
     var homeTpl = Handlebars.compile($("#home-tpl").html());
     var employeeListTpl = Handlebars.compile($("#employee-list-tpl").html());
-
-
-    /* ---------------------------------- Local Variables ---------------------------------- */
     var service = new EmployeeService();
     service.initialize().done(function () {
         renderHomeView();
     });
 
     /* --------------------------------- Event Registration -------------------------------- */
+    var num = 0;
     $('.search-first').on('keyup', findByName);
     $('.search-last').on('keyup', findByName);
-
+    $('.nums').html("No employees are found");
     $('.help-btn').on('click', function() {
         alert("Employee Directory v3.4");
     });
@@ -28,20 +27,25 @@
     function findByName() {
         var trimmed_first = $('.search-first').val().trim();
         var trimmed_last = $('.search-last').val().trim();
-        if (trimmed_first != trimmed_first.toLowerCase()) {  //if not lowercase, 
-            trimmed_first = ""; }                           //then set to empty string so it is not included in search
-        if (trimmed_last != trimmed_last.toLowerCase()) {
-            trimmed_last = ""; }
         if (!((trimmed_first.indexOf(' ') >= 0) || (trimmed_last.indexOf(' ') >= 0))) {
             if ((trimmed_first.length >= 2) || (trimmed_last.length >= 2)) {
                 service.findByName(trimmed_first, trimmed_last).done(function (employees) {
+                    num = employees.length;
+                    if (num == 1)
+                        $('.nums').html(num + " employee is found");
+                    else if (num > 1) 
+                        $('.nums').html(num + " employees are found");
                     $('.content').html(employeeListTpl(employees));
                 });
             }
-            else 
+            else {
+                $('.nums').html("No employees are found");
                 $('.content').html(null);
+            }
         }
-        else
+        else {
+            $('.nums').html("No employees are found");
             $('.content').html(null);
+        }
     }
 }());

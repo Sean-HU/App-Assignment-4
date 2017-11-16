@@ -14,7 +14,9 @@
         <div class="bar bar-standard bar-header-secondary">
         <input class='search-first' type="search" placeholder="Enter first name"/> 
            <input class='search-last' type="search" placeholder="Enter last name"/>
+            <div class="nums"></div>
         </div>
+         
         <div class="content"></div>
     </script>
     <script id="employee-list-tpl" type="text/template">
@@ -25,16 +27,16 @@
                 <th>Last Name</th>
                 <th>First Name</th>
             </tr>
-            {{#each this}}
-            <tr class="table-view-cell media">
-                <a href="#employees/{{ id }}">
-                <td><img class="media-object pull-left" src="assets/pics/{{pic}}"></td>
-                <div class="media-body">
-                   <td>{{title}}</td> <td> {{lastName}}</td> <td>{{firstName}}</td>
-                </div>
-                </a>
-            </tr>
-            {{/each}}
+        {{#each this}}
+        <tr class="table-view-cell media">
+            <a href="#employees/{{ id }}">
+            <td><img class="media-object pull-left" src="assets/pics/{{pic}}"></td>
+            <div class="media-body">
+               <td>{{title}}</td> <td> {{lastName}}</td> <td>{{firstName}}</td>
+            </div>
+            </a>
+        </tr>
+        {{/each}}
         </table>
     </script>
 

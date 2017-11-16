@@ -12,12 +12,20 @@ tr:nth-child(odd) {
     background-color: #8ec5ea;
 }
 
-tr:nth-last-child(even) {
+tr:nth-child(even) {
     background-color: aqua;
+}
+
+.nums {
+    margin: 0;
+    padding: 10px;
+    font-size:large;
+    text-align:center;
 }
 
 .content {
     position: absolute;
+    margin-top: 2%;
 }
 
 .bar-header-secondary>input {
