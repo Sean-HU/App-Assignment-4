@@ -1,40 +1,17 @@
-table {
+ul {
     clear: both;
-    font-size:large;
-}
-
-th, td {
-    text-align: center;
-    padding: 10px;
-}
-
-tr:nth-child(odd) {
-    background-color: #8ec5ea;
-}
-
-tr:nth-child(even) {
-    background-color: aqua;
-}
-
-.nums {
-    margin: 0;
-    padding: 10px;
-    font-size:large;
-    text-align:center;
 }
 
 .content {
     position: absolute;
-    margin-top: 2%;
 }
 
 .bar-header-secondary>input {
     margin-top: 6px;
-    height: 62px;
+    height: 31px;
 }
 
 .table-view {
-    width: 100%;
     margin: 0 !important;
     border: none;
 }
@@ -45,8 +22,8 @@ tr:nth-child(even) {
 }
 
 .media-object {
-    width: 55px;
-    height: 55px;
+    width: 42px;
+    height: 42px;
     border-radius: 25px;
 }
 
