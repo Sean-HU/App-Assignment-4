@@ -6,8 +6,17 @@
     <link href="assets/ratchet/css/ratchet.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet">
 </head>
+
 <body>
     <script id="home-tpl" type="text/template">
+   <a href="#" class="search-name-btn">     
+        <div class="media-body">
+            <button type="button">Search By Name</button>
+            <button type="button">Search By Department/Title</button>
+        </div>
+    </a>
+    </script>
+    <script id="search-name-tpl" type="text/template">
         <header class="bar bar-nav">
         <h1 class="title">Directory</h1>
         </header>
@@ -100,6 +109,7 @@
       </div>
   </script>
     <script src="js/EmployeeListView.js"></script>
+<script src="js/SearchNameView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="cordova.js"></script>

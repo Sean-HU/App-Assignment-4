@@ -1,42 +1,43 @@
-var HomeView = function (service) {
-    var employeeListView;
+/*var HomeView = function (service) {
+    var searchNameView;
     //var phoneListView;
     this.initialize = function () {
         // Define a div wrapper for the view (used to attach events)
-        this.$el = $('<div/>');
-        this.$el.on('keyup', '.search-first', findByName);
-        this.$el.on('keyup', '.search-last', findByName);
-        employeeListView = new EmployeeListView();
+        this.$el = $('<button/>');
+        
+        this.$el.on('click', '.search-name', searchName);
+        //'button'.on('click', '.search-name', searchName);
+        searchNameView = new SearchNameView();
+       
     };
     this.initialize();
-    this.render = function() {
+    this.render = function () {
         this.$el.html(this.template());
-        $('.content', this.$el).html(employeeListView.$el);
-       // $('.content', this.$el).html(phoneListView.$el);
+       $('body', this.$el).html(searchNameView.$el);
+        // $('.content', this.$el).html(phoneListView.$el);
         return this;
     };
-    function findByName() {
-        var trimmed_first = $('.search-first').val().trim();
-        var trimmed_last = $('.search-last').val().trim();
-        if (!((trimmed_first.indexOf(' ') >= 0) || (trimmed_last.indexOf(' ') >= 0))) {
-            if ((trimmed_first.length >= 2) || (trimmed_last.length >= 2)) {
-                service.findByName(trimmed_first, trimmed_last).done(function (employees) {
-                    //num = employees.length;
-                    //if (num == 1)
-                       // $('.nums').html(num + " employee is found");
-                    //else if (num > 1)
-                       // $('.nums').html(num + " employees are found");
-                    employeeListView.setEmployees(employees);
-                });
-            }
-            else {
-                //$('.nums').html("No employees are found");
-                employeeListView.setEmployees(null);
-            }
-        }
-        else {
-            //$('.nums').html("No employees are found");
-            employeeListView.setEmployees(null);
-        }
+    function searchName() {
+        //$('body', this.$el).html(searchNameView.$el);
+        searchNameView.initialize();
     }
+   
+}*/
+
+var HomeView = function (service) {
+    var searchNameView
+    this.initialize = function () {
+        this.$el = $('<div/>');
+        this.$el.on('click', '.search-name-btn', this.searchName);
+        searchNameView = new SearchNameView;
+    };
+    this.render = function () {
+        this.$el.html(this.template());
+        return this;
+    };
+    this.searchName = function (event) {
+        //searchNameView.render();
+        $('body').html(new SearchNameView(service).render().$el);
+    };
+    this.initialize();
 }
