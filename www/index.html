@@ -12,6 +12,10 @@
    <a href="#" class="search-name-btn">     
         <div class="media-body">
             <button type="button">Search By Name</button>
+        </div>
+    </a>
+        <a href="#" class="search-title-btn">     
+        <div class="media-body">
             <button type="button">Search By Department/Title</button>
         </div>
     </a>
@@ -23,6 +27,18 @@
         <div class="bar bar-standard bar-header-secondary">
         <input class='search-first' type="search" placeholder="Enter first name"/> 
            <input class='search-last' type="search" placeholder="Enter last name"/>
+            
+        </div>
+         
+        <div class="content"></div>
+    </script>
+     <script id="search-title-tpl" type="text/template">
+        <header class="bar bar-nav">
+        <h1 class="title">Directory</h1>
+        </header>
+        <div class="bar bar-standard bar-header-secondary">
+        <input class='search-department' type="search" placeholder="Enter Department"/> 
+           <input class='search-title' type="search" placeholder="Enter Title"/>
             
         </div>
          
@@ -110,6 +126,7 @@
   </script>
     <script src="js/EmployeeListView.js"></script>
 <script src="js/SearchNameView.js"></script>
+<script src="js/SearchTitleView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="cordova.js"></script>
