@@ -7,16 +7,19 @@
     <link href="assets/css/styles.css" rel="stylesheet">
 </head>
 <body>
-<script id="home-tpl" type="text/template">
-    <header class="bar bar-nav">
-    <h1 class="title">Directory</h1>
-    </header>
-    <div class="bar bar-standard bar-header-secondary">
-    <input class='search-key' type="search"/>
-    </div>
-    <div class="content"></div>
-</script>
-<script id="employee-list-tpl" type="text/template">
+    <script id="home-tpl" type="text/template">
+        <header class="bar bar-nav">
+        <h1 class="title">Directory</h1>
+        </header>
+        <div class="bar bar-standard bar-header-secondary">
+        <input class='search-first' type="search" placeholder="Enter first name"/> 
+           <input class='search-last' type="search" placeholder="Enter last name"/>
+            
+        </div>
+         
+        <div class="content"></div>
+    </script>
+    <script id="employee-list-tpl" type="text/template">
     <ul class="table-view">
     {{#each this}}
     <li class="table-view-cell media">
@@ -24,14 +27,14 @@
     <img class="media-object pull-left" src="assets/pics/{{pic}}">
     <div class="media-body">
     {{firstName}} {{lastName}}
-    <p>{{title}}</p>
+    <p>{{title}} ~ {{department}}</p>
     </div>
     </a>
     </li>
     {{/each}}
     </ul>
 </script>
- <script id="employee-tpl" type="text/template">
+     <script id="employee-tpl" type="text/template">
       <header class="bar bar-nav">
           <a class="btn btn-link btn-nav pull-left" href="#">
               <span class="icon icon-left-nav"></span>
@@ -96,7 +99,7 @@
           </div>
       </div>
   </script>
-<script src="js/EmployeeListView.js"></script>
+    <script src="js/EmployeeListView.js"></script>
 <script src="js/HomeView.js"></script>
 <script src="lib/handlebars.js"></script>
 <script src="cordova.js"></script>
