@@ -12,7 +12,6 @@ var SearchNameView = function (service) {
     this.render = function() {
         this.$el.html(this.template());
         $('.content', this.$el).html(employeeListView.$el);
-       // $('.content', this.$el).html(phoneListView.$el);
         return this;
     };
     function findByName() {
@@ -21,21 +20,14 @@ var SearchNameView = function (service) {
         if (!((trimmed_first.indexOf(' ') >= 0) || (trimmed_last.indexOf(' ') >= 0))) {
             if ((trimmed_first.length >= 1) || (trimmed_last.length >= 1)) {
                 service.findByName(trimmed_first, trimmed_last).done(function (employees) {
-                    //num = employees.length;
-                    //if (num == 1)
-                       // $('.nums').html(num + " employee is found");
-                    //else if (num > 1)
-                       // $('.nums').html(num + " employees are found");
                     employeeListView.setEmployees(employees);
                 });
             }
             else {
-                //$('.nums').html("No employees are found");
                 employeeListView.setEmployees(null);
             }
         }
         else {
-            //$('.nums').html("No employees are found");
             employeeListView.setEmployees(null);
         }
     }

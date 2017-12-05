@@ -32,13 +32,7 @@
 
 
     /* --------------------------------- Event Registration -------------------------------- */
-    //var num = 0;
-    //$('.search-first').on('keyup', findByName);
-    //$('.search-last').on('keyup', findByName);
-    //$('.nums').html("No employees are found");
-    //$('.help-btn').on('click', function() {
-     //   alert("Employee Directory v3.4");
-    //});
+   
 
    document.addEventListener('deviceready',
 function () {
